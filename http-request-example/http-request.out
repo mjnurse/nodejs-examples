@@ -1,0 +1,14 @@
+> nodejs web-server.js &
+[1] 8286
+
+> nodejs http-request.js 
+ERROR: null
+RESPONSE: [object Object]
+BODY: <b>URL:</b> /<br><b>Query Value:</b> undefined<br>
+
+> fg
+nodejs web-server.js
+^C
+
+>
+

@@ -1,0 +1,9 @@
+> nodejs promise-chain-example.js 
+
+0.001 MAIN STARTED
+0.012 WRAP PROMISE CREATE RUNNING: value: test1
+0.012 WRAP DATA RUNNING: value: test1 , returning: <before>test1<after>
+0.013 MAIN ENDED
+0.014 WRAP PROMISE CREATE RUNNING: value: <before>test1<after>
+0.015 WRAP DATA RUNNING: value: <before>test1<after> , returning: <before><before>test1<after><after>
+0.015 RESULT HANDLER: result: <before><before>test1<after><after>

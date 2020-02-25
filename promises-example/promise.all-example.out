@@ -1,0 +1,8 @@
+> nodejs promise.all-example.js 
+
+Promise 3 running: resolve = [Function] reject = [Function]
+Promise 2 running: resolve = [Function] reject = [Function]
+message = 
+Promise 1 running: resolve = [Function] reject = [Function]
+results =  [ 'one ', 'one three two ', 'one three ' ] message = one three two 
+results =  [ 'one three ', 'one three two ', 'one ' ] message = one three two 

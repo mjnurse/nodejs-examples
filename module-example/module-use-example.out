@@ -1,0 +1,30 @@
+
+Include the base-module
+-----------------------
+
+Call both functions in the base module
+--------------------------------------
+My Warning: Base module warning
+My Error: Base module error
+
+Include the extend-module
+-------------------------
+
+Call both func in the base module - note error func is over-ridden
+------------------------------------------------------------------
+My Warning: Base module warning
+My Error: (now in upper) BASE MODULE ERROR
+
+Call all 3 functions in the extend-module
+-----------------------------------------
+My Warning: Extended module warning
+My Warning: Extended module warn twice Extended module warn twice
+My Error: (now in upper) EXTENDED MODULE ERROR
+
+Call the new function in the base-module
+----------------------------------------
+My Warning: Base module warn twice Base module warn twice
+
+Test: base-module == extend-module?
+-----------------------------------
+true

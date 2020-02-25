@@ -1,0 +1,53 @@
+#!/bin/bash
+
+scriptname="$1"
+destdir="$2"
+
+if [[ "$2" == "" ]]; then
+   echo "usage: ${0:2} <source_file_name> <dest_dir_name>"
+   exit
+fi
+
+filename=""
+section=none
+while IFS= read line; do 
+   # echo ">>>>> $line"
+   case $section in
+   name)
+      summary=$(echo "$line" | sed "s/^.* - //; s/\.$//;")
+      filename="$destdir/${summary// /_}.script"
+      echo "# $summary" > $filename
+      echo "### $scriptname" >> $filename
+      section=none
+      ;;
+   usage) 
+      echo "$line" | sed "s/^[^ ]* */\`usage: /; s/$/\`/" >> $filename
+      section=none
+      ;;
+   description)
+      newline=$(echo "$line" | sed "s/^[^ ]* *//; s/ *\n//")
+      if [[ "$newline" == "AUTHOR" ]]; then
+         section=none
+         echo "${description:1}" >> $filename
+      else
+         description="$description $newline"
+      fi
+      ;;
+   esac
+ 
+   case "$line" in
+   *NAME)
+      section=name
+      ;;
+   *USAGE)
+      section=usage
+      ;;
+   *DESCRIPTION)
+      section=description
+      ;;
+   esac
+done < "$scriptname" 
+
+echo "\`\`\`js" >> $filename
+cat $scriptname >> $filename
+echo "\`\`\`" >> $filename

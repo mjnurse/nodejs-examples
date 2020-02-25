@@ -1,0 +1,41 @@
+> nodejs promise-example.js
+
+MAIN STARTED
+MAIN ENDED
+IN SUCCESS FUNCTION
+Initialized user details:
+{
+  login: 'mjnurse',
+  id: 22958213,
+  node_id: 'MDQ6VXNlcjIyOTU4MjEz',
+  avatar_url: 'https://avatars2.githubusercontent.com/u/22958213?v=4',
+  gravatar_id: '',
+  url: 'https://api.github.com/users/mjnurse',
+  html_url: 'https://github.com/mjnurse',
+  followers_url: 'https://api.github.com/users/mjnurse/followers',
+  following_url: 'https://api.github.com/users/mjnurse/following{/other_user}',
+  gists_url: 'https://api.github.com/users/mjnurse/gists{/gist_id}',
+  starred_url: 'https://api.github.com/users/mjnurse/starred{/owner}{/repo}',
+  subscriptions_url: 'https://api.github.com/users/mjnurse/subscriptions',
+  organizations_url: 'https://api.github.com/users/mjnurse/orgs',
+  repos_url: 'https://api.github.com/users/mjnurse/repos',
+  events_url: 'https://api.github.com/users/mjnurse/events{/privacy}',
+  received_events_url: 'https://api.github.com/users/mjnurse/received_events',
+  type: 'User',
+  site_admin: false,
+  name: null,
+  company: null,
+  blog: '',
+  location: null,
+  email: null,
+  hireable: null,
+  bio: null,
+  public_repos: 3,
+  public_gists: 0,
+  followers: 0,
+  following: 0,
+  created_at: '2016-10-20T11:55:11Z',
+  updated_at: '2020-01-08T17:16:46Z'
+}
+
+>

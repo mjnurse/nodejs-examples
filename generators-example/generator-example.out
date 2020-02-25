@@ -1,0 +1,11 @@
+> node generator-example.js
+
+Declare Gen=add(3)
+Step: 1: x= 3 , y= undefined
+Call: 1 Gen Returns: { value: 4, done: false }
+Step: 2: x= 3 , y= undefined
+Call: 2 Gen Returns: { value: null, done: false }
+Step: 3: x= 3 , y= undefined
+Step: 4: x= 3 , y= 6
+Call: 3 Gen Returns: { value: 9, done: true }
+Call: 4 Gen Returns: { value: undefined, done: true }
