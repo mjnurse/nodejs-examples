@@ -1,32 +1,3 @@
-# TCP Server and Client Examples
-
-## Single Server, Single Client Test
-
-File: test-client-server
-```bash
-#!/bin/bash
-help_text=""
-help_line="TCP Single Client, Single Server test"
-
-echo TEST: Start a server on port 9000
-echo ---------------------------------
-node tcp-server -l 9000 &
-sleep 2
-echo
-
-echo TEST: Start a client to connect to server
-echo -----------------------------------------
-node tcp-client -l -i 5 -s 10 9000
-echo
-sleep 2
-
-echo TEST: Shutdown server
-echo ---------------------
-nc -N localhost 9000 <<< shutdown > /dev/null
-```
-
-File: test-client-server.out
-```bash
 > test-client-server
 
 TEST: Start a server on port 9000
@@ -59,4 +30,3 @@ Server, Port: 9000 New client connection: ::ffff:127.0.0.1 53530
 Server, Port: 9000 Data Received: "shutdown"      
 Server, Port: 9000 Shutting down when all connections close
 Server, Port: 9000 Client closed connection ::ffff:127.0.0.1 53530
-```

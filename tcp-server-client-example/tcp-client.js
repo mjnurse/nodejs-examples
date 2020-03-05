@@ -30,7 +30,7 @@ let gPort;
 
 // eslint-disable-next-line require-jsdoc
 function log(a='', b='', c='', d='', e='', f='', g='', h='', i='', j='') {
-  gLogging && console.log(a, b, c, d, e, f, g, h, i, j);
+  gLogging && console.log('Client', a, b, c, d, e, f, g, h, i, j);
 }
 
 // This client runs a simple performance test passing a specified number of
@@ -64,26 +64,26 @@ if (gPort) {
   const gClient = new Net.Socket();
 
   // Open a connection to a TCP server using the specified port.
-  console.log('Opening connection. Port:', gPort);
+  console.log('Client', 'Opening connection. Port:', gPort);
 
   gClient.connect(gPort, 'localhost', function() {
-    console.log('Connected.');
-    console.log(
+    console.log('Client', 'Connected.');
+    console.log('Client',
         'Sending:', gNumIterations, 'messages with a size of:', gMessageSize);
     gStartTime = Date.now();
   });
 
-  // Process data recieved from the server.
+  // Process data received from the server.
   gClient.on('data', function(data) {
     str = data.toString();
     if (gLogging) {
-      log('Data Recieved: First 50 Char:', '"' +
+      log('Client', 'Data Received: First 50 Char:', '"' +
       str.slice(0, 50) + '", Length:', str.length);
     }
     // After the specified number of messages, close the connection.
     if (gCount >= gNumIterations) {
       gClient.destroy();
-      console.log('Run time:', (Date.now() - gStartTime) + 'ms');
+      console.log('Client', 'Run time:', (Date.now() - gStartTime) + 'ms');
     } else { // Else send another message.
       gClient.write(String(gCount++).padEnd(gMessageSize, 'x'));
     }
@@ -91,18 +91,18 @@ if (gPort) {
 
   // Process a closed connection.
   gClient.on('close', function() {
-    console.log('Connection closed');
+    console.log('Client', 'Connection closed');
   });
 
   // Process an error on the connection.
   gClient.on('error', function(err) {
-    console.log('Error:', err.message);
+    console.log('Client', 'Error:', err.message);
   });
 
 
   gClient.write(String(gCount++).padEnd(gMessageSize, 'x'));
 } else {
-  console.log(
+  console.log('Client',
       'Usage: node tcp-client.js [-l (logging)]',
       '[-i <num_iterations] [-s <message_size>] <port>');
 }
