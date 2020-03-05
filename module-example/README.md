@@ -11,7 +11,7 @@ File: base-module.js
 // Create a module exporter.
 const exporter=module.exports={};
 
-// Add a two functions to the module.
+// Add two functions to the module.
 exporter.warn=function(message) {
   console.log('My Warning: ' + message);
 };
@@ -90,7 +90,7 @@ console.log(baseModule == extendedModule);
 #### Output
 
 File: module-use-example.out
-```
+```bash
 
 Include the base-module
 -----------------------

@@ -18,7 +18,7 @@ request('http://localhost:7000', function(error, response, body) {
 #### Output
 
 File: http-request.out
-```
+```bash
 > nodejs web-server.js &
 [1] 8286
 

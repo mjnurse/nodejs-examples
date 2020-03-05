@@ -32,7 +32,7 @@ console.log('Call:', 4, 'Gen Returns:', gen.next());
 
 ## Output
 File: generator-example.out
-```
+```bash
 > node generator-example.js
 
 Declare Gen=add(3)

@@ -59,8 +59,8 @@ main();
 #### Output
 
 File: promise-example.out
-```
-> nodejs promise-example.js > promise-example.out
+```bash
+> nodejs promise-example.js
 
 MAIN STARTED
 MAIN ENDED
@@ -151,7 +151,7 @@ main();
 #### Output
 
 File: promise-chain-example.out
-```
+```bash
 > nodejs promise-chain-example.js 
 
 0.001 MAIN STARTED
@@ -224,7 +224,7 @@ main();
 #### Output
 
 File: promise.all-example.out
-```
+```bash
 > nodejs promise.all-example.js 
 
 Promise 3 running: resolve = [Function] reject = [Function]
