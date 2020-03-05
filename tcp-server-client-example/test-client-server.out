@@ -10,16 +10,16 @@ Client Opening connection. Port: 9000
 Client Connected.
 Client Sending: 5 messages with a size of: 10
 Server, Port: 9000 New client connection: ::ffff:127.0.0.1 53529
-Server, Port: 9000 Data Received: "0xxxxxxxxx"      
-Client Client Data Received: First 50 Char: "Thanks for: 0xxxxxxxxx", Length: 22      
-Server, Port: 9000 Data Received: "1xxxxxxxxx"      
-Client Client Data Received: First 50 Char: "Thanks for: 1xxxxxxxxx", Length: 22      
-Server, Port: 9000 Data Received: "2xxxxxxxxx"      
-Client Client Data Received: First 50 Char: "Thanks for: 2xxxxxxxxx", Length: 22      
-Server, Port: 9000 Data Received: "3xxxxxxxxx"      
-Client Client Data Received: First 50 Char: "Thanks for: 3xxxxxxxxx", Length: 22      
-Server, Port: 9000 Data Received: "4xxxxxxxxx"      
-Client Client Data Received: First 50 Char: "Thanks for: 4xxxxxxxxx", Length: 22      
+Server, Port: 9000 Data Received: "0xxxxxxxxx"
+Client Client Data Received: First 50 Char: "Thanks for: 0xxxxxxxxx", Length: 22
+Server, Port: 9000 Data Received: "1xxxxxxxxx"
+Client Client Data Received: First 50 Char: "Thanks for: 1xxxxxxxxx", Length: 22
+Server, Port: 9000 Data Received: "2xxxxxxxxx"
+Client Client Data Received: First 50 Char: "Thanks for: 2xxxxxxxxx", Length: 22
+Server, Port: 9000 Data Received: "3xxxxxxxxx"
+Client Client Data Received: First 50 Char: "Thanks for: 3xxxxxxxxx", Length: 22
+Server, Port: 9000 Data Received: "4xxxxxxxxx"
+Client Client Data Received: First 50 Char: "Thanks for: 4xxxxxxxxx", Length: 22
 Client Run time: 11ms
 Client Connection closed
 Server, Port: 9000 Client closed connection ::ffff:127.0.0.1 53529
@@ -27,6 +27,6 @@ Server, Port: 9000 Client closed connection ::ffff:127.0.0.1 53529
 TEST: Shutdown server
 ---------------------
 Server, Port: 9000 New client connection: ::ffff:127.0.0.1 53530
-Server, Port: 9000 Data Received: "shutdown"      
+Server, Port: 9000 Data Received: "shutdown"
 Server, Port: 9000 Shutting down when all connections close
 Server, Port: 9000 Client closed connection ::ffff:127.0.0.1 53530

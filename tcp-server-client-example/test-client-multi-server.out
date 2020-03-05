@@ -1,0 +1,46 @@
+> test-client-multi-server
+
+TEST: Start 3 servers on ports 9000,9001,9002
+---------------------------------------------
+Server, Port: 9001 Listening: { address: '::', family: 'IPv6', port: 9001 }
+Server, Port: 9002 Listening: { address: '::', family: 'IPv6', port: 9002 }
+Server, Port: 9000 Listening: { address: '::', family: 'IPv6', port: 9000 }
+
+TEST: Start a client to connect to servers
+------------------------------------------
+Client Opening connection: 0 Port: 9000
+Client Opening connection: 1 Port: 9001
+Client Opening connection: 2 Port: 9002
+Check: 1 Client Num Responses: 0 of 3
+Client Connected, Connection: 0 Port: 9000
+Server, Port: 9001 New client connection: ::ffff:127.0.0.1 54779
+Client Connected, Connection: 1 Port: 9001
+Server, Port: 9002 New client connection: ::ffff:127.0.0.1 54780
+Server, Port: 9000 New client connection: ::ffff:127.0.0.1 54778
+Check: 2 Client Num Responses: 0 of 3
+Client Connected, Connection: 2 Port: 9002
+Server, Port: 9001 Data Received: "Client Message sent to connection 1"
+Server, Port: 9000 Data Received: "Client Message sent to connection 0"
+Client Connection 1 Data Received: "Thanks for: Client Message sent to connection 1"
+Server, Port: 9002 Data Received: "Client Message sent to connection 2"
+Client Connection 0 Data Received: "Thanks for: Client Message sent to connection 0"
+Client Connection 2 Data Received: "Thanks for: Client Message sent to connection 2"
+Client All servers have responded
+Server, Port: 9000 Client closed connection ::ffff:127.0.0.1 54778
+Server, Port: 9001 Client closed connection ::ffff:127.0.0.1 54779
+Server, Port: 9002 Client closed connection ::ffff:127.0.0.1 54780
+
+TEST: Shutdown servers
+----------------------
+Server, Port: 9000 New client connection: ::ffff:127.0.0.1 54781
+Server, Port: 9000 Data Received: "shutdown"
+Server, Port: 9000 Shutting down when all connections close
+Server, Port: 9000 Client closed connection ::ffff:127.0.0.1 54781
+Server, Port: 9001 New client connection: ::ffff:127.0.0.1 54782
+Server, Port: 9001 Data Received: "shutdown"
+Server, Port: 9001 Shutting down when all connections close
+Server, Port: 9001 Client closed connection ::ffff:127.0.0.1 54782
+Server, Port: 9002 New client connection: ::ffff:127.0.0.1 54783
+Server, Port: 9002 Data Received: "shutdown"
+Server, Port: 9002 Shutting down when all connections close
+Server, Port: 9002 Client closed connection ::ffff:127.0.0.1 54783

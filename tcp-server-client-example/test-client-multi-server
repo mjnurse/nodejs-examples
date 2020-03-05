@@ -1,0 +1,23 @@
+#!/bin/bash
+help_text=""
+help_line="TCP Single Client, Multi Server test"
+
+echo TEST: Start 3 servers on ports 9000,9001,9002
+echo ---------------------------------------------
+node tcp-server -l 9000 &
+node tcp-server -l 9001 &
+node tcp-server -l 9002 &
+sleep 2
+echo
+
+echo TEST: Start a client to connect to servers
+echo ------------------------------------------
+node tcp-client-multi-conn 9000,9001,9002
+echo
+sleep 2
+
+echo TEST: Shutdown servers
+echo ----------------------
+nc -N localhost 9000 <<< shutdown > /dev/null
+nc -N localhost 9001 <<< shutdown > /dev/null
+nc -N localhost 9002 <<< shutdown > /dev/null
