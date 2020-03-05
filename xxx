@@ -1,7 +1,0 @@
-start_dir=$(pwd)
-for f in $(find . -name READMEsrc.md | sed "s/\/READMEsrc.*//"); do
-   echo Build README.md in: $f
-   cd $f
-   crreadme
-   cd $start_dir
-done
