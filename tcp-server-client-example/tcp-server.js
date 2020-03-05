@@ -41,19 +41,20 @@ const gServer = Net.createServer();
 
 // Process a new server connection.
 gServer.on('connection', function(conn) {
-  console.log('new client connection:',
+  console.log('Server, Port:', gPort, 'New client connection:',
       conn.remoteAddress, conn.remotePort);
 
-  // Process data recieved over the connection.
+  // Process data received over the connection.
   conn.on('data', function(data) {
     const str = data.toString();
-    log('Data Recieved: First 50 Char:', '"' +
-        str.slice(0, 50) + '", Length:', str.length);
+    log('Server, Port:', gPort, 'Data Received:',
+        '"' + str + '"');
 
     // If the message 'shutdown' is passed over the connection instruct the
     // server to shutdown once all connections are closed.
     if (str.slice(0, 8) == 'shutdown') {
-      console.log('Shutting down when all connections close');
+      console.log('Server, Port:', gPort,
+          'Shutting down when all connections close');
       gServer.close();
     }
     // Respond and return the data passed in.  This is really only useful
@@ -63,20 +64,21 @@ gServer.on('connection', function(conn) {
 
   // Process a closed connection.
   conn.on('close', function() { // what about on 'end'?
-    console.log('client closed connection',
+    console.log('Server, Port:', gPort, 'Client closed connection',
         conn.remoteAddress, conn.remotePort);
   });
 
   // Process an error on the connection.
   conn.on('error', function(err) {
-    console.log('Error:', conn.remoteAddress, conn.remotePort, err.message);
+    console.log('Server, Port:', gPort,
+        'Error:', conn.remoteAddress, conn.remotePort, err.message);
   });
 });
 
 // Use the first command line parameter as the port number.
 if (gPort) {
   gServer.listen(gPort, function() {
-    console.log('Server listening:', gServer.address());
+    console.log('Server, Port:', gPort, 'Listening:', gServer.address());
   });
 } else {
   console.log('Usage: node tcp-client.js [-l (logging)] <port>');
